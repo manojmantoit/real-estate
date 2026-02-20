@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import SearchBar from "./SearchBar";
+import { useAuth } from "./AuthProvider";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: "🏠" },
@@ -14,6 +15,15 @@ const navItems = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const user = useAuth();
+
+  async function logout() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.push("/login");
+    router.refresh();
+  }
+
   return (
     <aside className="w-56 bg-white shadow-md flex flex-col">
       <div className="px-4 py-4 border-b flex items-center justify-center">
@@ -43,6 +53,25 @@ export default function Sidebar() {
           </Link>
         ))}
       </nav>
+      {user && (
+        <div className="px-4 py-3 border-t">
+          <div className="flex items-center gap-2 mb-2">
+            <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-xs font-bold uppercase">
+              {user.username[0]}
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-gray-700 truncate">{user.username}</p>
+              <p className="text-xs text-gray-400 capitalize">{user.role}</p>
+            </div>
+          </div>
+          <button
+            onClick={logout}
+            className="w-full text-xs text-gray-500 hover:text-red-500 text-left py-1"
+          >
+            Sign out
+          </button>
+        </div>
+      )}
     </aside>
   );
 }

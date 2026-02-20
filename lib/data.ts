@@ -8,6 +8,7 @@ export const properties = [
     image: "https://img1.wsimg.com/isteam/ip/abfd3a70-9ce0-4cd3-9e67-c2bbdfd07c8d/Similar-completed-project.jpg",
     listing: "https://www.loopnet.com/Listing/9943-FM-1385-Pilot-Point-TX/37274722/",
     contact: "469-400-4190",
+    workflowStage: "Listing LOI Creation",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const properties = [
     image: "https://img1.wsimg.com/isteam/ip/abfd3a70-9ce0-4cd3-9e67-c2bbdfd07c8d/Similar-completed-project.jpg",
     listing: null,
     contact: "469-400-4190",
+    workflowStage: "Offer Contract Accepted",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const properties = [
     image: "https://img1.wsimg.com/isteam/ip/abfd3a70-9ce0-4cd3-9e67-c2bbdfd07c8d/mckinney-photo.png",
     listing: null,
     contact: "469-400-4190",
+    workflowStage: "Due Diligence in Progress",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const properties = [
     image: "https://img1.wsimg.com/isteam/ip/abfd3a70-9ce0-4cd3-9e67-c2bbdfd07c8d/Pizza.png",
     listing: null,
     contact: "469-400-4190",
+    workflowStage: "Title and Closing",
   },
 ];
 

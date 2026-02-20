@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { properties } from "@/lib/data";
+import WorkflowStepper from "@/components/WorkflowStepper";
 
 const statusColor: Record<string, string> = {
   Available: "bg-blue-100 text-blue-700",
@@ -40,7 +42,7 @@ export default function PropertiesPage() {
               </div>
               <p className="text-xs text-gray-500">{p.type}</p>
               {p.size !== "N/A" && <p className="text-xs text-gray-500">Size: {p.size}</p>}
-              <div className="mt-auto flex items-center gap-4 pt-3 border-t">
+              <div className="flex items-center gap-4 pt-3 border-t">
                 <a href={`tel:${p.contact}`} className="text-xs text-gray-500 hover:text-blue-600">
                   📞 {p.contact}
                 </a>
@@ -55,6 +57,7 @@ export default function PropertiesPage() {
                   </a>
                 )}
               </div>
+              <WorkflowStepper propertyId={p.id} />
             </div>
           </div>
         ))}
