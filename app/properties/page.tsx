@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { properties } from "@/lib/data";
 import WorkflowStepper from "@/components/WorkflowStepper";
+import NearbyComps from "@/components/NearbyComps";
 
 const statusColor: Record<string, string> = {
   Available: "bg-blue-100 text-blue-700",
@@ -58,6 +59,7 @@ export default function PropertiesPage() {
                 )}
               </div>
               <WorkflowStepper propertyId={p.id} />
+              <NearbyComps address={p.address} type={p.type} size={p.size} />
             </div>
           </div>
         ))}
