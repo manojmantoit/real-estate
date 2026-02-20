@@ -1,8 +1,4 @@
-const documents = [
-  { id: 1, name: "Lease Agreement – 12 Oak St", type: "PDF", size: "245 KB", uploaded: "2024-01-03", property: "12 Oak Street" },
-  { id: 2, name: "Insurance Certificate – Maple Ave", type: "PDF", size: "180 KB", uploaded: "2023-03-10", property: "45 Maple Avenue" },
-  { id: 3, name: "Inspection Report – Pine Rd", type: "PDF", size: "1.2 MB", uploaded: "2024-06-15", property: "7 Pine Road" },
-];
+import { documents } from "@/lib/data";
 
 export default function DocumentsPage() {
   return (

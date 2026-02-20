@@ -1,9 +1,4 @@
-const properties = [
-  { id: 1, address: "12 Oak Street, Unit A", type: "Residential", status: "Occupied" },
-  { id: 2, address: "45 Maple Avenue", type: "Commercial", status: "Vacant" },
-  { id: 3, address: "7 Pine Road, Unit 3B", type: "Residential", status: "Occupied" },
-  { id: 4, address: "99 Elm Blvd", type: "Industrial", status: "Maintenance" },
-];
+import { properties } from "@/lib/data";
 
 const statusColor: Record<string, string> = {
   Occupied: "bg-green-100 text-green-700",

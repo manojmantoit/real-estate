@@ -1,8 +1,4 @@
-const leases = [
-  { id: 1, property: "12 Oak Street, Unit A", tenant: "John Smith", start: "2024-01-01", end: "2025-01-01", rent: "$1,500/mo" },
-  { id: 2, property: "7 Pine Road, Unit 3B", tenant: "Sarah Lee", start: "2024-06-01", end: "2025-06-01", rent: "$2,000/mo" },
-  { id: 3, property: "45 Maple Avenue", tenant: "Acme Corp", start: "2023-03-01", end: "2026-03-01", rent: "$4,500/mo" },
-];
+import { leases } from "@/lib/data";
 
 function daysUntil(dateStr: string) {
   const diff = new Date(dateStr).getTime() - Date.now();

@@ -1,15 +1,4 @@
-const alerts = [
-  { type: "warning", message: "Lease at 12 Oak St expires in 15 days", icon: "⚠️" },
-  { type: "danger", message: "Rent overdue for Unit 3B – $1,200 pending", icon: "🔴" },
-  { type: "info", message: "Lease at 45 Maple Ave renews next month", icon: "ℹ️" },
-];
-
-const stats = [
-  { label: "Total Properties", value: "12" },
-  { label: "Active Leases", value: "9" },
-  { label: "Rent Collected (Feb)", value: "$18,400" },
-  { label: "Pending Payments", value: "2" },
-];
+import { alerts, stats } from "@/lib/data";
 
 export default function DashboardPage() {
   return (

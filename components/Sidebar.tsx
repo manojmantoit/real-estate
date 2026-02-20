@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import SearchBar from "./SearchBar";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: "🏠" },
@@ -17,6 +18,7 @@ export default function Sidebar() {
       <div className="px-6 py-5 border-b">
         <h1 className="text-lg font-bold text-blue-700">RE Manager</h1>
       </div>
+      <SearchBar />
       <nav className="flex-1 px-3 py-4 space-y-1">
         {navItems.map((item) => (
           <Link

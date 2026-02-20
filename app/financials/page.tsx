@@ -1,10 +1,4 @@
-const transactions = [
-  { id: 1, property: "12 Oak Street", type: "Rent", amount: 1500, date: "2025-02-01", status: "Paid" },
-  { id: 2, property: "7 Pine Road", type: "Rent", amount: 2000, date: "2025-02-01", status: "Paid" },
-  { id: 3, property: "45 Maple Avenue", type: "Rent", amount: 4500, date: "2025-02-01", status: "Overdue" },
-  { id: 4, property: "12 Oak Street", type: "Maintenance", amount: -350, date: "2025-01-28", status: "Paid" },
-  { id: 5, property: "99 Elm Blvd", type: "Repair", amount: -1200, date: "2025-01-20", status: "Paid" },
-];
+import { transactions } from "@/lib/data";
 
 const statusColor: Record<string, string> = {
   Paid: "bg-green-100 text-green-700",
