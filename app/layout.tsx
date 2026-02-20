@@ -3,8 +3,8 @@ import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
-  title: "Real Estate Manager",
-  description: "Manage properties, leases, rent, and documents",
+  title: "Aubrey Dallas Ventures",
+  description: "Sports – Ranches – Investments | Real Estate Portfolio Manager",
 };
 
 export default function RootLayout({

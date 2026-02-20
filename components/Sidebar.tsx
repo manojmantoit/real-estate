@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import SearchBar from "./SearchBar";
 
 const navItems = [
@@ -15,8 +16,15 @@ export default function Sidebar() {
   const pathname = usePathname();
   return (
     <aside className="w-56 bg-white shadow-md flex flex-col">
-      <div className="px-6 py-5 border-b">
-        <h1 className="text-lg font-bold text-blue-700">RE Manager</h1>
+      <div className="px-4 py-4 border-b flex items-center justify-center">
+        <Image
+          src="https://img1.wsimg.com/isteam/ip/abfd3a70-9ce0-4cd3-9e67-c2bbdfd07c8d/WhatsApp%20Image%202025-08-18%20at%2010.34.04%20PM.jpeg"
+          alt="Aubrey Dallas Ventures"
+          width={160}
+          height={60}
+          className="object-contain rounded"
+          unoptimized
+        />
       </div>
       <SearchBar />
       <nav className="flex-1 px-3 py-4 space-y-1">
