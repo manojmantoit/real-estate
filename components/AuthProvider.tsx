@@ -2,14 +2,16 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 type User = { username: string; role: string } | null;
-const AuthContext = createContext<User>(null);
+
+// undefined = still loading, null = not authenticated, User = authenticated
+const AuthContext = createContext<User | undefined>(undefined);
 
 export function useAuth() {
   return useContext(AuthContext);
 }
 
 export default function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User>(null);
+  const [user, setUser] = useState<User | undefined>(undefined);
 
   useEffect(() => {
     fetch("/api/me")

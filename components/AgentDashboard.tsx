@@ -31,7 +31,7 @@ export default function AgentDashboard() {
     fetch("/api/leads").then((r) => r.json()).then(setLeads);
   }, []);
 
-  const agentProperties = properties.filter((p) => p.addedBy === user?.username);
+  const agentProperties = properties.filter((p) => p.addedBy === (user as { username: string } | null)?.username);
   const activeLeads = leads.filter((l) => l.status !== "Closed");
   const closedLeads = leads.filter((l) => l.status === "Closed");
   const thisMonth = new Date().toISOString().slice(0, 7);
