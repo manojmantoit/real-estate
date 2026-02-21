@@ -7,6 +7,7 @@ export const runtime = "edge";
 
 const propertyStore: Property[] = seedProperties.map((p) => ({
   ...p,
+  status: p.status as Property["status"],
   addedBy: "owner",
 }));
 
