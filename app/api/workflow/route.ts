@@ -6,6 +6,10 @@ const workflowState = new Map<number, string>(
   properties.map((p) => [p.id, p.workflowStage])
 );
 
+export function registerProperty(id: number, stage: string) {
+  if (!workflowState.has(id)) workflowState.set(id, stage);
+}
+
 export async function GET(req: NextRequest) {
   const id = Number(req.nextUrl.searchParams.get("id"));
   const stage = workflowState.get(id);

@@ -1,8 +1,10 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { properties } from "@/lib/data";
 import WorkflowStepper from "@/components/WorkflowStepper";
 import NearbyComps from "@/components/NearbyComps";
+import AddPropertyModal from "@/components/AddPropertyModal";
+import type { Property } from "@/lib/types";
 
 const statusColor: Record<string, string> = {
   Available: "bg-blue-100 text-blue-700",
@@ -13,11 +15,21 @@ const statusColor: Record<string, string> = {
 };
 
 export default function PropertiesPage() {
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [showAdd, setShowAdd] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/properties").then((r) => r.json()).then(setProperties);
+  }, []);
+
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold">Properties</h2>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">
+        <button
+          onClick={() => setShowAdd(true)}
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700"
+        >
           + Add Property
         </button>
       </div>
@@ -64,6 +76,13 @@ export default function PropertiesPage() {
           </div>
         ))}
       </div>
+
+      {showAdd && (
+        <AddPropertyModal
+          onClose={() => setShowAdd(false)}
+          onAdded={(p) => setProperties((prev) => [...prev, p])}
+        />
+      )}
     </div>
   );
 }
